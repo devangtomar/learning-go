@@ -23,9 +23,19 @@ func main() {
 	fmt.Println(myMap["c"])      // will print "0" value
 	emptyMap := map[string]int{} // Creating a empty map!
 	fmt.Println(emptyMap)
-	//var value int
-	//var ok bool
-	value, ok := myMap["c"]
+
+	// Checking if key value pairs exist or not
+	var value int
+	var ok bool
+	value, ok = myMap["c"]
 	fmt.Println(value, ok)
 
+	// For removing key/value pairs via delete function
+	delete(myMap, "b")
+	fmt.Println(myMap)
+
+	// Looping a map in golang
+	for key, value := range myMap {
+		fmt.Println(key, value)
+	}
 }
