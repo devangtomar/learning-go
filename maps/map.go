@@ -37,5 +37,16 @@ func main() {
 	// Looping a map in golang
 	for key, value := range myMap {
 		fmt.Println(key, value)
+		//fmt.Printf("%s has a gradee of %0.1f%%\n", key, value)
+	}
+
+	// For looping only keys
+	for key := range myMap {
+		fmt.Println(key)
+	}
+
+	// For looping only values
+	for _, key := range myMap {
+		fmt.Println(key)
 	}
 }
