@@ -46,7 +46,7 @@ func main() {
 	}
 
 	// For looping only values
-	for _, key := range myMap {
-		fmt.Println(key)
+	for _, values := range myMap {
+		fmt.Println(values)
 	}
 }
