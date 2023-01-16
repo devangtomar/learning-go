@@ -1,11 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // You can define your own types as well via "type"
 type part struct {
 	description string
 	count       int
+}
+
+type subscriber struct {
+	name   string
+	rate   float64
+	active bool
 }
 
 type car struct {
@@ -16,6 +24,20 @@ type car struct {
 func showInfo(p part) {
 	fmt.Println("Description : ", p.description)
 	fmt.Println("Count : ", p.count)
+}
+
+func defaultSubscriiber(name string) subscriber {
+	var s subscriber
+	s.name = name
+	s.rate = 5.44
+	s.active = true
+	return s
+}
+
+func printInfo(s subscriber) {
+	fmt.Println("Name : ", s.name)
+	fmt.Println("Rate : ", s.rate)
+	fmt.Println("Active? : ", s.active)
 }
 
 func main() {
@@ -44,4 +66,8 @@ func main() {
 
 	// Using custom types with functions
 	showInfo(bolts)
+
+	subscriber1 := defaultSubscriiber("Devang tomar")
+	subscriber1.rate = 4.99
+	printInfo(subscriber1)
 }
