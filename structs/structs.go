@@ -34,6 +34,10 @@ func defaultSubscriiber(name string) subscriber {
 	return s
 }
 
+func applyDiscount(s *subscriber) {
+	s.rate = 9.89
+}
+
 func printInfo(s subscriber) {
 	fmt.Println("Name : ", s.name)
 	fmt.Println("Rate : ", s.rate)
@@ -70,4 +74,9 @@ func main() {
 	subscriber1 := defaultSubscriiber("Devang tomar")
 	subscriber1.rate = 4.99
 	printInfo(subscriber1)
+
+	// Modifying a struct using a function
+	var s subscriber
+	applyDiscount(&s)
+	fmt.Println(s.rate)
 }
