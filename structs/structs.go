@@ -99,7 +99,13 @@ func main() {
 	fmt.Println(sub.rate)
 
 	// exporting type from "github.com/headfirstgo/magazine"
-	var mag magazine.Subscriber
+	var mag magazine.Subscriber // Struct field names must be capitalized to be exported
 	mag.Rate = 4.99
 	fmt.Println(mag.Rate)
+
+	// Struct literals
+	myCar := car{name: "Corvette", topSpeed: 334}
+	fmt.Println("Name: ", myCar.name)
+	fmt.Println("Top speed: ", myCar.topSpeed)
+
 }
