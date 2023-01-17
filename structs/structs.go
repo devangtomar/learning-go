@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/headfirstgo/magazine"
 )
 
 // You can define your own types as well via "type"
@@ -44,6 +45,10 @@ func printInfo(s subscriber) {
 	fmt.Println("Active? : ", s.active)
 }
 
+type myStructNew struct {
+	myField int
+}
+
 func main() {
 	// struct is when you need to store more than one type of data
 	var myStruct struct {
@@ -79,4 +84,22 @@ func main() {
 	var s subscriber
 	applyDiscount(&s)
 	fmt.Println(s.rate)
+
+	// Accessing struct fields through a pointer
+	var value myStructNew
+	value.myField = 3
+	var pointer *myStructNew = &value
+	fmt.Println((*pointer).myField)
+	fmt.Println(pointer.myField)
+
+	// Another example
+
+	var sub subscriber
+	applyDiscount(&sub)
+	fmt.Println(sub.rate)
+
+	// exporting type from "github.com/headfirstgo/magazine"
+	var mag magazine.Subscriber
+	mag.Rate = 4.99
+	fmt.Println(mag.Rate)
 }
