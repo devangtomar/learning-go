@@ -43,4 +43,12 @@ func main() {
 
 	// More example
 	fmt.Println(value.WithReturn())
+
+	/* As with any other function, a method is considered exported from the
+	current package if its name begins with a capital letter, and it’s considered
+	unexported if its name begins with a lowercase letter. If you want to use
+	your method outside the current package, be sure its name begins with a
+	capital letter.
+	*/
+
 }
