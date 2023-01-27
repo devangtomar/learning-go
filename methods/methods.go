@@ -1,6 +1,10 @@
 // Methods are nothing but classes in golang..
 // So based on that implement that 👀
 
+// You can only define new methods on types that were declared in
+//the current package. Defining a method on a globally defined type
+//like int will result in a compile error.
+
 package main
 
 import (
