@@ -35,9 +35,11 @@ func playingWithTypes() {
 	var abc int = 6
 	var name string = "devang"
 	var marks float64 = 5.12
+	var char rune = 'j'
 
 	fmt.Println(reflect.TypeOf(abc))
 	fmt.Println(reflect.TypeOf(float64(abc)))
 	fmt.Println(reflect.TypeOf(name))
 	fmt.Println(reflect.TypeOf(marks))
+	fmt.Println(reflect.TypeOf(char))
 }
