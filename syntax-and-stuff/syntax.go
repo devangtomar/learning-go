@@ -53,5 +53,5 @@ func printingStuff() {
 	var fname string = "devang"
 	var sname string = "tomar"
 
-	fmt.Println("Your first name is : ",fname, "and surname is", sname)
+	fmt.Println("Your first name is : ", fname, "and surname is", sname)
 }
