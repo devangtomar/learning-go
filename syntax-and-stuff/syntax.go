@@ -9,6 +9,7 @@ import (
 func main() {
 	variables()
 	playingWithTypes()
+	printingStuff()
 }
 
 func variables() {
@@ -46,4 +47,11 @@ func playingWithTypes() {
 	fmt.Println(reflect.TypeOf(char))
 	fmt.Println(reflect.TypeOf(decision))
 	fmt.Println(decision)
+}
+
+func printingStuff() {
+	var fname string = "devang"
+	var sname string = "tomar"
+
+	fmt.Println("Your first name is : ",fname, "and surname is", sname)
 }
