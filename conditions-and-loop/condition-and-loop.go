@@ -10,6 +10,8 @@ func main() {
 	// Understanding how methods works..
 	time_package()
 	string_package()
+	how_to_comment()
+
 }
 
 func time_package() {
@@ -28,4 +30,13 @@ func string_package() {
 	fixed := replacer.Replace(broken)         // this is a method since it returns a string type
 	fmt.Println(fixed)
 
+}
+
+func how_to_comment() {
+	var single_line string = "this is a sample" // this is a single lines comment
+	fmt.Println(single_line)
+	/*
+	   var multi_line string
+	   multi_line = "this is also a sample"
+	*/
 }
