@@ -1,7 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"strings"
 	"time"
 )
@@ -11,6 +13,7 @@ func main() {
 	time_package()
 	string_package()
 	how_to_comment()
+	input_output()
 
 }
 
@@ -39,4 +42,12 @@ func how_to_comment() {
 	   var multi_line string
 	   multi_line = "this is also a sample"
 	*/
+}
+
+func input_output() {
+	fmt.Println("Enter a grade: ")
+	reader := bufio.NewReader(os.Stdin)
+	input, _ := reader.ReadString('\n') // we are ignoring the error returned from the ReadString method..
+	fmt.Print(input)
+
 }
