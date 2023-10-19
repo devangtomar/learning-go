@@ -3,7 +3,9 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"net/http"
 	"os"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -14,6 +16,7 @@ func main() {
 	string_package()
 	how_to_comment()
 	input_output()
+	error_checking()
 
 }
 
@@ -49,5 +52,16 @@ func input_output() {
 	reader := bufio.NewReader(os.Stdin)
 	input, _ := reader.ReadString('\n') // we are ignoring the error returned from the ReadString method..
 	fmt.Print(input)
+
+}
+
+func error_checking() {
+	bool, err := strconv.ParseBool("true") // returns an error if the string can't be converted -> boolean
+	fmt.Print(err)
+	fmt.Print(bool)
+	file, err := os.Open("file.txt") // returns an error if the file can't be opened
+	fmt.Print(file)
+	response, err := http.Get("http://golang.org") // returns an error if the page can't be accessed
+	fmt.Print(response)
 
 }
