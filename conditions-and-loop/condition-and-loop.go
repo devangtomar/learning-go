@@ -57,7 +57,7 @@ func input_output() {
 
 func error_checking() {
 	bool, err := strconv.ParseBool("true") // returns an error if the string can't be converted -> boolean
-	fmt.Print(err)
+	fmt.Print(err)                         // we can also use the underscore character in an assignment to use as a blank identifier
 	fmt.Print(bool)
 	file, err := os.Open("file.txt") // returns an error if the file can't be opened
 	fmt.Print(file)
