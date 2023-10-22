@@ -21,7 +21,7 @@ func variables() {
 
 	// second way
 
-	var num_2 int
+	var num_2 int = 5
 	fmt.Println(num_2) // at default the value is zero
 	num_2 = 5
 	fmt.Println(num_2)

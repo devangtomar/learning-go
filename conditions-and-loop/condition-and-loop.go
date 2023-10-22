@@ -19,6 +19,7 @@ func main() {
 	input_output()
 	error_checking()
 	error_handling()
+	multiple_if_else()
 
 }
 
@@ -77,4 +78,15 @@ func error_handling() {
 		fmt.Print("Error encountered: ", err)
 	}
 	fmt.Println(input)
+}
+
+func multiple_if_else() {
+	var marks int = 89
+	if marks < 30 {
+		fmt.Print("Bad marks!")
+	} else if marks < 60 && marks > 30 {
+		fmt.Print("Good marks!")
+	} else {
+		fmt.Print("Great marks!")
+	}
 }
