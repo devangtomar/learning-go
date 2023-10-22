@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 	"strconv"
@@ -17,6 +18,7 @@ func main() {
 	how_to_comment()
 	input_output()
 	error_checking()
+	error_handling()
 
 }
 
@@ -64,4 +66,15 @@ func error_checking() {
 	response, err := http.Get("http://golang.org") // returns an error if the page can't be accessed
 	fmt.Print(response)
 
+}
+
+func error_handling() {
+	fmt.Print("Enter a grade: ")
+	reader := bufio.NewReader(os.Stdin)
+	input, err := reader.ReadString('\n')
+	// log.Fatal(err) this reports the error and stop the program..
+	if err != nil {
+		fmt.Print("Error encountered: ", err)
+	}
+	fmt.Println(input)
 }
