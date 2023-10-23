@@ -20,7 +20,6 @@ func main() {
 	error_checking()
 	error_handling()
 	multiple_if_else()
-
 }
 
 func time_package() {
