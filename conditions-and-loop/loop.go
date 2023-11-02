@@ -19,4 +19,10 @@ func main() {
 	for x := 1; false; x += 1 { // this loop will never run
 		fmt.Println("Iterating over a for loop.. iteration number", x)
 	}
+
+	b := 1
+	for b <= 3 {
+		fmt.Println(b)
+		b++
+	}
 }
