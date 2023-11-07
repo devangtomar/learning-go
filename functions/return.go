@@ -10,7 +10,8 @@ func status(grade float32) string {
 	if grade < 60.0 {
 		return "Failing!"
 	}
-	return "Passing!"
+	return "Passing!" // return type has to be string only now..
+	// fmt.Println("This line would never execute!")
 }
 
 func main() {
