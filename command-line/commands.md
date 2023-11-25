@@ -9,3 +9,4 @@
 - `go mod init <package_name>` - initializes a new Go module by creating a `go.mod` file in the current directory.
 - `go mod tidy` - update, or remove dependencies in `go.mod` file
 - `go mod edit` - Edit `go.mod` file
+- `go doc` - Reading package documentation
