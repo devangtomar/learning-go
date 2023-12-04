@@ -36,4 +36,17 @@ func main() {
 	dates[1] = time.Unix(1447920000, 0)
 	dates[2] = time.Unix(1557894000, 0)
 	fmt.Println(dates[1])
+
+	// Array literals
+
+	var more_notes [7]string = [7]string{"do", "re", "mi", "do", "re", "mi", "do"}
+	fmt.Println(more_notes[0])
+	var more_primes [5]int = [5]int{2, 3, 5, 7, 11}
+	fmt.Println(more_primes[2])
+
+	// short variable declaration
+	much_more_notes := [7]string{"do", "re", "mi", "do", "re", "mi", "do"}
+	much_more_primes := [5]int{2, 3, 5, 7, 11}
+	fmt.Println(much_more_notes[1])
+	fmt.Println(much_more_primes[1])
 }
