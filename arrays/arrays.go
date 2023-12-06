@@ -58,19 +58,27 @@ func main() {
 	fmt.Println(text)
 
 	// looping an array
-	new_notes := [7]string {"do", "re", "mi", "do", "re"}
-	for i := 0; i <=2 ; i++ {
+	new_notes := [7]string{"do", "re", "mi", "do", "re"}
+	for i := 0; i <= 2; i++ {
 		fmt.Println(i, new_notes[i])
 	}
 
 	// Length of an array
 	fmt.Println(len(new_notes))
-	for i:= 0; i< len(notes); i++ {
+	for i := 0; i < len(notes); i++ {
 		fmt.Println(i, notes[i])
 	}
 
 	// Safer way of iterating an array
 	for index, value := range notes { // you can use '_' instead of index if not will be used..
-		fmt.Println("Here's the index: ", index," and here's the value: ", value)
+		fmt.Println("Here's the index: ", index, " and here's the value: ", value)
 	}
+
+	// Sum of numbers in an array
+	numbers := [5]float64{1.2, 1.3, 1.8, 2.4, 7.8}
+	var sum float64 = 0
+	for _, number := range numbers { // "_" will iterate index for the array
+		sum += number
+	}
+	fmt.Println("Sum of the array numbers is: ", sum)
 }
