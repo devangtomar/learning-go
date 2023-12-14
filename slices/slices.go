@@ -40,8 +40,18 @@ func main() {
 
 	// Slice operators
 	underlyingArray := [5]string{"a", "b", "c", "d", "e"}
-	slice1 := underlyingArray[1:3]
+	slice1 := underlyingArray[1:3] // Slice is nothing but an underlying array
 	slice2 := underlyingArray[:3]
 	fmt.Println(slice1)
 	fmt.Println(slice2)
+	underlyingArray[1] = "p"
+	fmt.Println(slice2) // So changing the underlying array change the slice as well!
+
+	// Adding elements into a slice
+	slice := []string{"a", "b"}
+	fmt.Println(slice, len(slice))
+	slice = append(slice, "c")
+	fmt.Println(slice, len(slice))
+
+	// At default slice stores default value for that type! Bool ~> False, int ~> 0 etc.
 }
