@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
 	// Slices declaration ~ Arrays without size limit 👀
@@ -54,4 +57,12 @@ func main() {
 	fmt.Println(slice, len(slice))
 
 	// At default slice stores default value for that type! Bool ~> False, int ~> 0 etc.
+
+	// Slice operator can be used on other slices
+	underlyingAnotherArray := [5]string{"a", "b", "c", "d", "e"}
+	slice5 := underlyingAnotherArray[1:]
+	fmt.Println(slice5)
+
+	// Command lines args
+	fmt.Println(os.Args[2:]) // taking only after 1st input command lines args
 }
