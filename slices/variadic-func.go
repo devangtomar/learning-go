@@ -26,6 +26,11 @@ func average(numbers ...float64) float64 {
 	}
 	return sum / float64(len(numbers))
 }
+
+func mix(num int, flag bool, strings ...string) {
+	fmt.Println(num, flag, strings)
+}
+
 func main() {
 	severalStrings("a", "d", "f") // returns a slice
 	severalInts(23, 2, 9)
@@ -36,4 +41,10 @@ func main() {
 	fmt.Println(average(100, 40))
 	fmt.Println(average(100, 40, 34, 90))
 	fmt.Println(average(1.00, 4.0, 34.9, 90.12))
+
+	// Passing slices to variadic functions ~> ... after the slice!
+	intSlice := []int{1, 2, 3}
+	severalInts(intSlice...)
+	stringSlice := []string{"a", "b", "c", "d"}
+	mix(1, true, stringSlice...)
 }
