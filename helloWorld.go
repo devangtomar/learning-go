@@ -7,6 +7,16 @@ import (
 	"strings"
 )
 
+func input_output(input *bufio.Reader) string {
+
+	fmt.Print("Enter a number!")
+	text, _ := input.ReadString('\n')
+
+	text = strings.TrimSuffix(text, "\n")
+
+	return text
+}
+
 func main() {
 	files, err := os.ReadDir(".")
 	if err != nil {
@@ -14,12 +24,8 @@ func main() {
 		return
 	}
 	fmt.Println("All the files in current dir : ", files)
-
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Enter a number!")
-	text, _ := reader.ReadString('\n')
+	output := input_output(reader)
 
-	text = strings.TrimSuffix(text, "\n")
-
-	fmt.Println("You entered the following string : ", text)
+	fmt.Println("You entered the following string : ", output)
 }
