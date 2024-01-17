@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io/ioutil"
 	"os"
 	"strconv"
 )
@@ -23,7 +24,7 @@ func GetFloats(filename string) ([]float64, error) {
 	if err != nil {
 		return nil, err
 	}
-	defer CloseFile(file)
+	defer CloseFile(file) // this will be always executed!
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		number, err := strconv.ParseFloat(scanner.Text(), 64)
@@ -46,5 +47,15 @@ func main() {
 	// The panic function expects a single argument that satisfies the empty
 	// interface (that is, it can be of any type). That argument is converted to a
 	// string (if necessary) and printed as part of the panic’s log message.
-	panic("Oh, no we're going down!")
+
+	// That's how you generate a panic!
+	// panic("Oh, no we're going down!")
+
+	path := "./file123.go"
+	files, err := ioutil.ReadDir(path)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(files)
+
 }
