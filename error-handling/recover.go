@@ -3,7 +3,8 @@ package main
 import "fmt"
 
 func calmDown() {
-	recover()
+	// recover()
+	fmt.Println(recover()) // this will print panic value!
 }
 
 func freakOut() {
@@ -27,4 +28,5 @@ func main() {
 
 	// But there's a way..
 	freakOut()
+	fmt.Println("Exiting Normally!")
 }
