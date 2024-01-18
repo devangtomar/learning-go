@@ -11,6 +11,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"time"
 )
 
 func responseSize(url string) {
@@ -39,5 +40,24 @@ func main() {
 	}
 	fmt.Println(string(body))
 
-	responseSize("https://example.com")
+	// Takes too long and one after another!
+	// responseSize("https://example.com/")
+	// responseSize("https://golang.org/")
+	// responseSize("https://golang.org/doc")
+
+	// Concurrency allows a program to pause one task and work on other tasks.
+	// If a program is written to support concurrency, then it may also support
+	// parallelism: running tasks simultaneously. A computer with only one
+	// processor can only run one task at a time. But most computers these days
+	// have multiple processors (or one processor with multiple cores). Your
+	// computer may divide concurrent tasks among different processors to run
+	// them at the same time. (It’s rare to manage this directly; the operating
+	// system usually handles it for you.
+
+	go responseSize("https://example.com/")
+	go responseSize("https://golang.org/doc")
+	go responseSize("https://golang.org/")
+	time.Sleep(5 * time.Second)
+
+	// Go statements can't be used with return values
 }
