@@ -60,4 +60,33 @@ func main() {
 	time.Sleep(5 * time.Second)
 
 	// Go statements can't be used with return values
+	// sum = go add(x, y) ~> this wouldn't work..
+
+	// The only practical way to use a channel is to communicate from one goroutine to another goroutine.
+	// 1. Create a channel
+	// 2. Write a function that receives a channel as a parameter. We’ll run this function in a separate goroutine, and use it to send values over the channel.
+	// 3. Receive the sent values in our original goroutine.
+
+	// Not only do channels allow you to send values from one goroutine to another, they ensure the sending goroutine has sent the value before the receiving goroutine attempts to use it.
+
+	var myChannel chan float64     // declare a variable to hold a channel
+	myChannel = make(chan float64) // Actually create the channel
+
+	myNewChannel := make(chan float64) // Create a channel and declare it..
+	fmt.Println(myNewChannel)
+	// Sending and receiving values with channels
+
+	// To send a value on a channel, you use the <- operator (that’s a less-than
+	// symbol followed by a dash). It looks like an arrow pointing from the value
+	// you’re sending to the channel you’re sending it on.
+
+	myChannel <- 3.14
+
+	// fmt.Println(myChannel)
+
+	// You also use the <- operator to receive values from a channel, but the
+	// positioning is different: you place the arrow to the left of the channel you’re
+	// receiving from. (It kind of looks like you’re pulling a value out of the channel.
+
+	// <- myChannel // like this
 }
