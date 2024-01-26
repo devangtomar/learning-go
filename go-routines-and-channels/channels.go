@@ -12,6 +12,6 @@ func main() {
 	// fmt.Println(<-myChannel) // Passing the incoming channel into print function!
 
 	// We could also do this..
-	recievedVar := <-myChannel
+	recievedVar := <-myChannel // to assign to a variable!
 	fmt.Println(recievedVar)
 }
