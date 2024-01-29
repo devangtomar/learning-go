@@ -38,4 +38,6 @@ func main() {
 	value.MethodWithoutParameters()
 	value.MethodWithParameters(124.3)
 	fmt.Println(value.MethodWithReturnValue())
+
+	// You can only call methods defined as part of the interface
 }
