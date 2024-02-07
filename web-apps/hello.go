@@ -16,10 +16,10 @@ func englishHandler(writer http.ResponseWriter, request *http.Request) {
 	write(writer, "Hello, web!")
 }
 func frenchHandler(writer http.ResponseWriter, request *http.Request) {
-	write(writer, "Hello, web!")
+	write(writer, "Salut, web!")
 }
 func hindiHandler(writer http.ResponseWriter, request *http.Request) {
-	write(writer, "Hello, web!")
+	write(writer, "Namaste, web!")
 }
 
 func main() {
