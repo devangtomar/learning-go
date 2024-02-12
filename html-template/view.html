@@ -1,11 +1,12 @@
-<h1>Guestbook</h1>
+<h1>Гостевая книга</h1> <!-- шапка -->
 
 <div>
-  X total signatures -
-  <a href="/guestbook/new">Add your signatures!</a>
-</div>
+	{{.SignatureCount}} подписей всего -
+	<a href="guestbook/new">Добавить свою подпись</a>
+</div> <!-- путь до формы -->
+
 <div>
-  <p>signatures</p>
-  <p>go</p>
-  <p>here</p>
+	{{range .Signatures}}
+		<p>{{.}}</p> <!-- в цикле размечает записи по параграфам -->
+	{{end}}
 </div>
