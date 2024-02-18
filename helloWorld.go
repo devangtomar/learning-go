@@ -8,13 +8,10 @@ import (
 )
 
 func input_output(input *bufio.Reader) string {
-
-	fmt.Print("Enter a number!")
-	text, _ := input.ReadString('\n')
-
-	text = strings.TrimSuffix(text, "\n")
-
-	return text
+    fmt.Print("Enter a number!")
+    text, _ := input.ReadString('\n')
+    text = strings.TrimSuffix(text, "\n")
+    return text
 }
 
 func main() {
