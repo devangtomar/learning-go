@@ -72,9 +72,9 @@ func error_handling() {
 	fmt.Print("Enter a grade: ")
 	reader := bufio.NewReader(os.Stdin)
 	input, err := reader.ReadString('\n')
-	// log.Fatal(err) this reports the error and stop the program..
 	if err != nil {
 		fmt.Print("Error encountered: ", err)
+		log.Fatal(err) // this reports the error and stop the program..
 	}
 	fmt.Println(input)
 }
