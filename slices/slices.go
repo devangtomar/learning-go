@@ -34,4 +34,12 @@ func main() {
 		fmt.Println(letters[i])
 	}
 
+	// Slice literals
+	moreLetters := []string{"a", "b", "c"}
+	fmt.Println(moreLetters)
+
+	// Slice operators
+	underlyingArray := [5]string{"a", "b", "c", "d", "e"}
+	slice1 := underlyingArray[1:3]
+	fmt.Println(slice1)
 }
