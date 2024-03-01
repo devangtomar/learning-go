@@ -41,5 +41,7 @@ func main() {
 	// Slice operators
 	underlyingArray := [5]string{"a", "b", "c", "d", "e"}
 	slice1 := underlyingArray[1:3]
+	slice2 := underlyingArray[:3]
 	fmt.Println(slice1)
+	fmt.Println(slice2)
 }
