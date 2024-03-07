@@ -27,5 +27,4 @@ func main() {
 
 	// But there's a way..
 	freakOut()
-	fmt.Println("Exiting normally")
 }
