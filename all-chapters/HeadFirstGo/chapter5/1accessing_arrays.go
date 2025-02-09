@@ -2,7 +2,7 @@
 Exercise 1: Accessing Arrays
 
 Create an array with 5 string elements, holding English weekday names:
-“Monday”, “Tuesday”, “Wednesday”, “Thursday”, “Friday”.
+"Monday", "Tuesday", "Wednesday", "Thursday", "Friday".
 Then print each array element along with its index.
 
 You can assign array elements individually, or you can use an array literal.
@@ -18,18 +18,18 @@ import (
 
 func main() {
 	var week [5]string = [5]string{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"}
-	for i, elem := range week {
-		fmt.Println(i, elem)
+	for i, day := range week {
+		fmt.Printf("Index for array: %d and Value for array: %s\n", i, day)
 	}
 
 	//OR
-	var nedelya [5]string = [5]string{} //"ПН", "ВТ", "СР", "ЧТ", "ПТ"
-	nedelya[0] = "ПН"
-	nedelya[1] = "ВТ"
-	nedelya[2] = "СР"
-	nedelya[3] = "ЧТ"
-	nedelya[4] = "ПТ"
-	for j := 0; j < len(nedelya); j++ {
-		fmt.Println(j, nedelya[j])
+	var days [5]string = [5]string{} // "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
+	days[0] = "Monday"
+	days[1] = "Tuesday"
+	days[2] = "Wednesday"
+	days[3] = "Thursday"
+	days[4] = "Friday"
+	for j := 0; j < len(days); j++ {
+		fmt.Printf("%d %s\n", j, days[j])
 	}
 }

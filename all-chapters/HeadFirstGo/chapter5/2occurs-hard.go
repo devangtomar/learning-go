@@ -38,11 +38,12 @@ func main() {
 		9, 8, 8, 1, 2, 3, 6, 4, 9, 2, 5, 8, 6, 7, 7,
 		5, 4, 2, 9, 4, 4, 2, 2, 5, 5, 0, 0, 0, 9, 1,
 		9, 5, 8, 0, 1, 1, 0, 5, 3, 8, 6, 3, 4, 4, 9}
-	var occurs [10]int
+	var occurs [10]int = [10]int{}
 	for _, num := range nums {
 		occurs[num]++
 	}
-	for num, coun := range occurs {
-		fmt.Println(num, "occurred", coun, "times")
+
+	for number, count := range occurs {
+		fmt.Printf("Occurrence of number '%d' is %d\n", number, count)
 	}
 }
