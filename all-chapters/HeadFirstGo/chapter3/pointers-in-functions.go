@@ -7,9 +7,10 @@ import (
 func main() {
 	amount := 6
 	double(amount)
-	fmt.Println(amount, "по адресу", &amount, "\tНЕ изменился...")
+	fmt.Println(amount, "at address", &amount, "\tDid NOT change...")
 	double2(&amount)
-	fmt.Println(amount, "по адресу", &amount, "\tизменился!")
+	fmt.Println(amount, "at address", &amount, "\tDid change!")
+	fmt.Printf("And now the value is %v", *&amount)
 }
 
 func double(num int) {
