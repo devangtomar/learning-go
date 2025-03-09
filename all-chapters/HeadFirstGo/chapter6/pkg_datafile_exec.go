@@ -16,6 +16,6 @@ func main() {
 		sum += number
 	}
 	sampleCount := float64(len(numbers))
-	fmt.Println("Сумма:", sum, "\tЭлементов:", sampleCount)
-	fmt.Printf("Среднее: %0.2f\n", sum/sampleCount)
+	fmt.Println("Sum:", sum, "\tElements:", sampleCount)
+	fmt.Printf("Average: %0.2f\n", sum/sampleCount)
 }
