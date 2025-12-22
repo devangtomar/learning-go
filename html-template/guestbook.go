@@ -77,6 +77,7 @@ func createHandler(writer http.ResponseWriter, request *http.Request) {
 }
 
 func main() {
+	fmt.Println("Serving on http://localhost:8080 !")
 	http.HandleFunc("/guestbook", viewHandler)
 	http.HandleFunc("/guestbook/new", newHandler)
 	http.HandleFunc("/guestbook/create", createHandler)
