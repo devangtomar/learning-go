@@ -45,7 +45,7 @@ func newHandler(writer http.ResponseWriter, request *http.Request) {
 	//форма для ввода
 }
 
-func viewHandler(writer http.ResponseWriter, request *http.Request) {
+func viewHandler(writer *http.ResponseWriter, request *http.ResponseWriter) {
 	signatures := getStrings("signatures.txt")
 	html, err := template.ParseFiles("view.html")
 	check(err)
