@@ -7,8 +7,8 @@ import (
 )
 
 func main() {
-	fmt.Println("Введите оценку:")
+	fmt.Println("Enter something:")
 	reader := bufio.NewReader(os.Stdin)
 	input, _ := reader.ReadString('\n')
-	fmt.Println("Введено:", input)
+	fmt.Println("You entered:", input)
 }

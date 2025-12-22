@@ -1,13 +1,13 @@
-//Игра "Угадай число"
+//Guessing game "Guess the number"
 package main
 
 /*
-V1. Сгенерировать 1..100 и сохранить
-V2. Предложить угадать и сохранить
-V3. Меньше - сообщение, больше - сообщение
-V4. 10 попыток на угадывание, с напоминанием
-V5. если X = Y, вывести Успех и перестать перепроходить
-V6. если попытки кончились - грустное сообщение
+V1. Generate 1..100 and store it
+V2. Offer to guess and store the guess
+V3. If less - message, if more - message
+V4. 10 attempts to guess, with a reminder
+V5. if X = Y, output Success and stop replaying
+V6. if attempts are over - sad message
 task: -; 321; 23; 12; 13; nothing;
 */
 import (
@@ -22,45 +22,48 @@ import (
 )
 
 func main() {
-	//1. генерация чисел
+	//1. generate the number
 	scs := time.Now().Unix()
 	rand.Seed(scs)
-	fmt.Println("Выбрал номер от 1 до 100, угадаешь?")
+	fmt.Println("Chose a number from 1 to 100, can you guess?")
 	seed := rand.Intn(100) + 1
 	////////////////////////////////////
 
-	//2. чтение с клавиатуры & 4. ограничение в 10 попыток
+	//2. read from keyboard & 4. limit to 10 attempts
 	reader := bufio.NewReader(os.Stdin)
 	win := false
-	for guesses := 0; guesses < 10; guesses++ {
-		fmt.Println("Осталось", 10-guesses, "попыток...")
-		fmt.Print("Угадывай давай:")
-		input, err := reader.ReadString('\n') //считываем до Enter
+	// for guesses := 0; guesses < 10; guesses++ {
+	for guesses := 0; guesses < 10; {
+		fmt.Println("Remaining", 10-guesses, "attempts...")
+		fmt.Print("Guess now:")
+		input, err := reader.ReadString('\n') //read until Enter
 		if err != nil {
 			log.Fatal(err)
 		}
-		input = strings.TrimSpace(input)  //удаление \n
-		guess, err := strconv.Atoi(input) //строка в число
+		input = strings.TrimSpace(input)  //remove \n
+		guess, err := strconv.Atoi(input) //string to number
 		if err != nil {
 			log.Fatal(err)
 		}
+
+		guesses ++
 		////////////////////////////////////
 
-		//3. предположение
+		//3. Guess
 		if guess < seed {
-			fmt.Println("Ой, твой вариант МЕНЬШЕ.")
+			fmt.Println("Oops, your guess is LESS.")
 		} else if guess > seed {
-			fmt.Println("Ой, твой вариант БОЛЬШЕ")
-		} else { //5. угадывание
+			fmt.Println("Oops, your guess is MORE")
+		} else { //5. Guess correct
 			win = true
-			fmt.Println("\n\tХорошая работа! Ты угадал! B-)")
+			fmt.Println("\n\tGood job! You guessed it! B-)")
 			break
 		}
 		////////////////////////////////////
 	}
-	//6. грустное сообщение если попыток 0
+	//6. Sad message if no success
 	if !win {
-		fmt.Println("Не угадал, или попытки закончились. Я загадал", seed)
+		fmt.Println("Didn't guess, or attempts are over. I thought of", seed)
 	}
 	////////////////////////////////////
 }

@@ -19,19 +19,19 @@ func main() {
 	reader := bufio.NewReader(os.Stdin)
 
 	fmt.Print("Enter racer name: ")
-	name, err := reader.ReadString('\n')
+	racer_name, err := reader.ReadString('\n')
 	if err != nil {
 		log.Fatal(err)
 	}
-	name = strings.TrimSpace(name)
+	racer_name = strings.TrimSpace(racer_name)
 
 	fmt.Print("Enter racer rank: ")
-	input, err := reader.ReadString('\n')
+	racer_rank_string, err := reader.ReadString('\n')
 	if err != nil {
 		log.Fatal(err)
 	}
-	input = strings.TrimSpace(input)
-	rank, err := strconv.ParseInt(input, 10, 64)
+	racer_rank_string = strings.TrimSpace(racer_rank_string)
+	racer_rank, err := strconv.ParseInt(racer_rank_string, 10, 64)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -43,7 +43,7 @@ func main() {
 	// "silver". A rank of 3 should get a "bronze" medal,
 	// and any other rank should get a "participant" medal.
 	var medal string
-	switch rank {
+	switch racer_rank {
 	case 1:
 		medal = "gold"
 		break
@@ -58,5 +58,5 @@ func main() {
 		break
 	}
 
-	fmt.Println(name, "gets a", medal, "medal!")
+	fmt.Println(racer_name, "gets a", medal, "medal!")
 }

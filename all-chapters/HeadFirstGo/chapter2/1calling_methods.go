@@ -36,4 +36,6 @@ func main() {
 	// "builder", and pass the return value to
 	// "fmt.Println".
 	fmt.Println(builder.String())
+	builder.WriteString("sdfsfsf")
+	fmt.Println(strings.ToUpper(builder.String()))
 }
